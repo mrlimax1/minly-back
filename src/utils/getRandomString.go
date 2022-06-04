@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func getRandomString() string {
+func GetRandomString() string {
 	rand.Seed(time.Now().UnixNano())
 	chars := []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
 		"abcdefghijklmnopqrstuvwxyz" +

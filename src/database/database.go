@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func databaseConnect() *pg.DB {
+func Connect() *pg.DB {
 	opt, err := pg.ParseURL(fmt.Sprintf("postgres://%v:%v@%v:%v/%v?sslmode=disable",
 		os.Getenv("db_login"),
 		os.Getenv("db_password"),
@@ -22,7 +22,7 @@ func databaseConnect() *pg.DB {
 
 }
 
-func createSchema(db *pg.DB) error {
+func CreateSchema(db *pg.DB) error {
 	models := []interface{}{
 		(*Sites)(nil),
 	}
